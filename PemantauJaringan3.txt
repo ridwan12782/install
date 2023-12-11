@@ -1,0 +1,38 @@
+#bin/bash
+#pkg install git php -y
+git clone https://github.com/ridwan12782/Pemantau-Jaringan3.git
+cat >start-mikhmon <<EOL
+#bin/bash
+if pgrep "php" >/dev/null 2>&1 ; then
+killall php
+fi
+cd Pemantau-Jaringan3
+php -S 0.0.0.0:8080
+EOL
+cat >update-mikhmon <<EOL
+#bin/bash
+mkdir ~/backup-mikhmon
+cp ~/Pemantau-Jaringan3/include/config.php ~/backup-mikhmon/config.php
+cp -rf ~/Pemantau-Jaringan3/voucher/. ~/backup-mikhmon/voucher/
+cp -rf ~/Pemantau-Jaringan3/img/. ~/backup-mikhmon/img/
+rm -rf Pemantau-Jaringan3
+rm ~/backup-mikhmon/voucher/print.php
+rm ~/backup-mikhmon/voucher/printbt.php
+git clone https://github.com/ridwan12782/Pemantau-Jaringan3.git
+cp ~/backup-mikhmon/config.php ~/Pemantau-Jaringan3/include/config.php
+cp -rf ~/backup-mikhmon/voucher/. ~/Pemantau-Jaringan3/voucher/
+cp -rf ~/backup-mikhmon/img/. ~/Pemantau-Jaringan3/img/
+rm -rf ~/backup-mikhmon
+./start-mikhmon
+EOL
+cat >remove-mikhmon <<EOL
+#bin/bash
+rm -rf Pemantau-Jaringan3
+EOL
+cat >.bashrc <<EOL	
+~/start-mikhmon	
+EOL
+chmod +x start-mikhmon
+chmod +x update-mikhmon
+chmod +x remove-mikhmon
+./start-mikhmon
