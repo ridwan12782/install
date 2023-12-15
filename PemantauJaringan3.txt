@@ -30,9 +30,9 @@ cat >remove-PemantauJaringanV3 <<EOL
 rm -rf Pemantau-JaringanV3
 EOL
 cat >.bashrc <<EOL	
-~/start-mikhmon	
+~/start-PemantauJaringanV3	
 EOL
 chmod +x start-PemantauJaringanV3
 chmod +x update-PemantauJaringanV3
 chmod +x remove-PemantauJaringanV3
-./start-mikhmon
+./start-PemantauJaringanV3
