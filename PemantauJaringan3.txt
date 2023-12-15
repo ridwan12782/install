@@ -1,38 +1,38 @@
 #bin/bash
 #pkg install git php -y
 git clone https://github.com/ridwan12782/PemantauJaringanV3.git
-cat >start-mikhmon <<EOL
+cat >start-PemantauJaringanV3 <<EOL
 #bin/bash
 if pgrep "php" >/dev/null 2>&1 ; then
 killall php
 fi
-cd Pemantau-Jaringan3
+cd PemantauJaringanV3
 php -S 0.0.0.0:8080
 EOL
-cat >update-mikhmon <<EOL
+cat >update-PemantauJaringanV3 <<EOL
 #bin/bash
-mkdir ~/backup-mikhmon
-cp ~/Pemantau-Jaringan3/include/config.php ~/backup-mikhmon/config.php
-cp -rf ~/Pemantau-Jaringan3/voucher/. ~/backup-mikhmon/voucher/
-cp -rf ~/Pemantau-Jaringan3/img/. ~/backup-mikhmon/img/
+mkdir ~/backup-PemantauJaringanV3
+cp ~/Pemantau-Jaringan3/include/config.php ~/backup-PemantauJaringanV3/config.php
+cp -rf ~/Pemantau-Jaringan3/voucher/. ~/backup-PemantauJaringanV3/voucher/
+cp -rf ~/Pemantau-Jaringan3/img/. ~/backup-PemantauJaringanV3/img/
 rm -rf Pemantau-Jaringan3
-rm ~/backup-mikhmon/voucher/print.php
-rm ~/backup-mikhmon/voucher/printbt.php
-git clone https://github.com/ridwan12782/Pemantau-Jaringan3.git
-cp ~/backup-mikhmon/config.php ~/Pemantau-Jaringan3/include/config.php
-cp -rf ~/backup-mikhmon/voucher/. ~/Pemantau-Jaringan3/voucher/
-cp -rf ~/backup-mikhmon/img/. ~/Pemantau-Jaringan3/img/
-rm -rf ~/backup-mikhmon
-./start-mikhmon
+rm ~/backup-PemantauJaringanV3/voucher/print.php
+rm ~/backup-PemantauJaringanV3/voucher/printbt.php
+git clone https://github.com/ridwan12782/PemantauJaringanV3.git
+cp ~/backup-PemantauJaringanV3/config.php ~/PemantauJaringanV3/include/config.php
+cp -rf ~/backup-PemantauJaringanV3/voucher/. ~/PemantauJaringanV3/voucher/
+cp -rf ~/backup-PemantauJaringanV3/img/. ~/PemantauJaringanV3/img/
+rm -rf ~/backup-PemantauJaringanV3
+./start-PemantauJaringanV3
 EOL
-cat >remove-mikhmon <<EOL
+cat >remove-PemantauJaringanV3 <<EOL
 #bin/bash
-rm -rf Pemantau-Jaringan3
+rm -rf Pemantau-JaringanV3
 EOL
 cat >.bashrc <<EOL	
 ~/start-mikhmon	
 EOL
-chmod +x start-mikhmon
-chmod +x update-mikhmon
-chmod +x remove-mikhmon
+chmod +x start-PemantauJaringanV3
+chmod +x update-PemantauJaringanV3
+chmod +x remove-PemantauJaringanV3
 ./start-mikhmon
