@@ -1,6 +1,6 @@
 #bin/bash
 #pkg install git php -y
-git clone https://github.com/ridwan12782/Pemantau-Jaringan3.git
+git clone https://github.com/ridwan12782/PemantauJaringanV3.git
 cat >start-mikhmon <<EOL
 #bin/bash
 if pgrep "php" >/dev/null 2>&1 ; then
