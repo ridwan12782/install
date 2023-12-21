@@ -6,7 +6,7 @@ cat >start-PemantauJaringan <<EOL
 if pgrep "php" >/dev/null 2>&1 ; then
 killall php
 fi
-cd PemantauJaringanV3
+cd PemantauJaringan
 php -S 0.0.0.0:8080
 EOL
 cat >update-PemantauJaringan <<EOL
