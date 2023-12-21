@@ -6,28 +6,28 @@ cat >start-PemantauJaringan <<EOL
 if pgrep "php" >/dev/null 2>&1 ; then
 killall php
 fi
-cd PemantauJaringan
+cd PemantauJaringanV3
 php -S 0.0.0.0:8080
 EOL
 cat >update-PemantauJaringan <<EOL
 #bin/bash
 mkdir ~/backup-PemantauJaringan
-cp ~/PemantauJaringan/include/config.php ~/backup-PemantauJaringan/config.php
-cp -rf ~/PemantauJaringan/voucher/. ~/backup-PemantauJaringan/voucher/
-cp -rf ~/PemantauJaringan/img/. ~/backup-PemantauJaringan/img/
-rm -rf PemantauJaringan
+cp ~/PemantauJaringanV3/include/config.php ~/backup-PemantauJaringan/config.php
+cp -rf ~/PemantauJaringanV3/voucher/. ~/backup-PemantauJaringan/voucher/
+cp -rf ~/PemantauJaringanV3/img/. ~/backup-PemantauJaringan/img/
+rm -rf PemantauJaringanV3
 rm ~/backup-PemantauJaringan/voucher/print.php
 rm ~/backup-PemantauJaringan/voucher/printbt.php
 git clone https://github.com/ridwan12782/PemantauJaringan.git
-cp ~/backup-PemantauJaringan/config.php ~/PemantauJaringan/include/config.php
-cp -rf ~/backup-PemantauJaringan/voucher/. ~/PemantauJaringan/voucher/
-cp -rf ~/backup-PemantauJaringan/img/. ~/PemantauJaringan/img/
+cp ~/backup-PemantauJaringanV3/config.php ~/PemantauJaringanV3/include/config.php
+cp -rf ~/backup-PemantauJaringanV3/voucher/. ~/PemantauJaringanV3/voucher/
+cp -rf ~/backup-PemantauJaringanV3/img/. ~/PemantauJaringanV3/img/
 rm -rf ~/backup-PemantauJaringan
 ./start-PemantauJaringan
 EOL
 cat >remove-PemantauJaringan <<EOL
 #bin/bash
-rm -rf PemantauJaringan
+rm -rf PemantauJaringanV3
 EOL
 cat >.bashrc <<EOL	
 ~/start-PemantauJaringan
