@@ -1,7 +1,7 @@
 #bin/bash
 #pkg install git php -y
 git clone https://github.com/ridwan12782/Pemantaujaringan.git
-cat >start-PemantauJaringan <<EOL
+cat >start-Pemantaujaringan <<EOL
 #bin/bash
 if pgrep "php" >/dev/null 2>&1 ; then
 killall php
@@ -9,13 +9,13 @@ fi
 cd Pemantaujaringan
 php -S 0.0.0.0:8080
 EOL
-cat >update-PemantauJaringan <<EOL
+cat >update-Pemantaujaringan <<EOL
 #bin/bash
 mkdir ~/backup-Pemantaujaringan
 cp ~/Pemantaujaringan/include/config.php ~/backup-Pemantaujaringan/config.php
 cp -rf ~/Pemantaujaringan/voucher/. ~/backup-Pemantaujaringan/voucher/
 cp -rf ~/Pemantaujaringan/img/. ~/backup-Pemantaujaringan/img/
-rm -rf PemantauJaringan
+rm -rf Pemantaujaringan
 rm ~/backup-Pemantaujaringan/voucher/print.php
 rm ~/backup-Pemantaujaringan/voucher/printbt.php
 git clone https://github.com/ridwan12782/Pemantaujaringan.git
