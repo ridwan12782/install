@@ -1,6 +1,6 @@
 #bin/bash
 #pkg install git php -y
-git clone https://github.com/ridwan12782/PemantauJaringan.git
+git clone https://github.com/ridwan12782/Pemantaujaringan.git
 cat >start-PemantauJaringan <<EOL
 #bin/bash
 if pgrep "php" >/dev/null 2>&1 ; then
