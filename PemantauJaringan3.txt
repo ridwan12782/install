@@ -9,30 +9,30 @@ fi
 cd Pemantaujaringan
 php -S 0.0.0.0:8080
 EOL
-cat >update-Pemantaujaringan <<EOL
+cat >update-PemantauJaringan <<EOL
 #bin/bash
-mkdir ~/backup-Pemantaujaringan
-cp ~/Pemantaujaringan/include/config.php ~/backup-Pemantaujaringan/config.php
-cp -rf ~/Pemantaujaringan/voucher/. ~/backup-Pemantaujaringan/voucher/
-cp -rf ~/Pemantaujaringan/img/. ~/backup-Pemantaujaringan/img/
-rm -rf Pemantaujaringan
-rm ~/backup-Pemantaujaringan/voucher/print.php
-rm ~/backup-Pemantaujaringan/voucher/printbt.php
+mkdir ~/backup-PemantauJaringan
+cp ~/PemantauJaringan/include/config.php ~/backup-PemantauJaringan/config.php
+cp -rf ~/PemantauJaringan/voucher/. ~/backup-PemantauJaringan/voucher/
+cp -rf ~/PemantauJaringan/img/. ~/backup-PemantauJaringan/img/
+rm -rf PemantauJaringan
+rm ~/backup-PemantauJaringan/voucher/print.php
+rm ~/backup-PemantauJaringan/voucher/printbt.php
 git clone https://github.com/ridwan12782/Pemantaujaringan.git
-cp ~/backup-Pemantaujaringan/config.php ~/Pemantaujaringan/include/config.php
-cp -rf ~/backup-Pemantaujaringan/voucher/. ~/Pemantaujaringan/voucher/
-cp -rf ~/backup-Pemantaujaringan/img/. ~/Pemantaujaringan/img/
-rm -rf ~/backup-Pemantaujaringan
-./start-Pemantaujaringan
+cp ~/backup-PemantauJaringan/config.php ~/PemantauJaringan/include/config.php
+cp -rf ~/backup-PemantauJaringan/voucher/. ~/PemantauJaringan/voucher/
+cp -rf ~/backup-PemantauJaringan/img/. ~/PemantauJaringan/img/
+rm -rf ~/backup-PemantauJaringan
+./start-PemantauJaringan
 EOL
-cat >remove-Pemantaujaringan <<EOL
+cat >remove-PemantauJaringan <<EOL
 #bin/bash
-rm -rf Pemantaujaringan
+rm -rf PemantauJaringan
 EOL
 cat >.bashrc <<EOL	
-~/start-Pemantaujaringan
+~/start-PemantauJaringan
 EOL
-chmod +x start-Pemantaujaringan
-chmod +x update-Pemantaujaringan
-chmod +x remove-Pemantaujaringan
-./start-Pemantaujaringan
+chmod +x start-PemantauJaringan
+chmod +x update-PemantauJaringan
+chmod +x remove-PemantauJaringan
+./start-PemantauJaringan
